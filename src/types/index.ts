@@ -7,6 +7,7 @@ export type productWithQty = product & {
 export type stateType = {
   products: product[];
   cart: productWithQty[];
+  saved: productWithQty[];
 };
 
 export type product = {
@@ -19,13 +20,20 @@ export type product = {
 };
 
 export type actionType = {
-  type: "ADD_TO_CART";
+  type:
+    | "ADD_TO_CART"
+    | "REMOVE_FROM_CART"
+    | "INCREMENT_QTY"
+    | "DECREMENT_QTY"
+    | "SAVE_FOR_LATER"
+    | "MOVE_TO_CART";
   payload: product;
 };
 
 export type productContext = {
   products: product[];
   cart: productWithQty[];
+  saved: productWithQty[];
   dispatch: React.Dispatch<actionType>;
 };
 

@@ -17,7 +17,7 @@ export const Product = ({ product }: productProps) => {
   return (
     <div
       key={id}
-      className="w-[18rem] rounded border-solid m-2 border shadow hover:shadow-md"
+      className="w-[18rem] bg-white rounded border-solid m-2 border shadow hover:shadow-md"
     >
       <img className="w-full h-[22rem] rounded" src={image} alt={title} />
       <h3 className="px-4 mt-2">{title}</h3>
@@ -32,7 +32,6 @@ export const Product = ({ product }: productProps) => {
           <Link
             to="/cart"
             className="border-gray-800  border text-gray-800 px-4 py-1 rounded hover:bg-gray-700 hover:text-gray-200"
-            onClick={addToCart}
           >
             Go to cart
           </Link>

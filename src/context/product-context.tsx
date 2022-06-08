@@ -13,15 +13,16 @@ const ProductContext = createContext<productContext>({} as productContext);
 const initialState = {
   products: data as product[],
   cart: [] as productWithQty[],
+  saved: [] as productWithQty[],
 };
 
 export const ProductProvider = ({ children }: reactChildren) => {
-  const [{ products, cart }, dispatch] = useReducer(
+  const [{ products, cart, saved }, dispatch] = useReducer(
     productReducer,
     initialState
   );
   return (
-    <ProductContext.Provider value={{ products, cart, dispatch }}>
+    <ProductContext.Provider value={{ products, cart, saved, dispatch }}>
       {children}
     </ProductContext.Provider>
   );

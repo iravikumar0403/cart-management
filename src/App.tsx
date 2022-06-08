@@ -3,7 +3,7 @@ import { routes } from "./config/routes-config";
 
 const App = () => {
   const routesEl = useRoutes(routes);
-  return <div>{routesEl}</div>;
+  return <div className="bg-slate-100 min-h-screen">{routesEl}</div>;
 };
 
 export default App;
