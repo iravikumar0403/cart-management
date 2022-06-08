@@ -1,5 +1,9 @@
+import { useRoutes } from "react-router-dom";
+import { routes } from "./config/routes-config";
+
 const App = () => {
-  return <div>Hello Typescript</div>;
+  const routesEl = useRoutes(routes);
+  return <div>{routesEl}</div>;
 };
 
 export default App;
